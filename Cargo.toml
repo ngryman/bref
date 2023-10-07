@@ -1,7 +1,9 @@
 [package]
 name = "bref"
 version = "0.1.0"
+description = "A modest URL shortener for personal usage."
 authors = [ "Nicolas Gryman <ngryman@gmail.com>" ]
+license = "MIT"
 edition = "2021"
 
 [dependencies]
