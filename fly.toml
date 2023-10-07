@@ -1,0 +1,21 @@
+# fly.toml app configuration file generated for bref on 2023-10-07T14:49:28+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "bref"
+primary_region = "mad"
+
+[build]
+
+[[mounts]]
+  source = "data"
+  destination = "/usr/local/share/"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]

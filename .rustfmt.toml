@@ -1,0 +1,24 @@
+# comments width is 80ch
+comment_width = 80
+# this is necessary so nvim formats things correctly
+edition = "2021"
+# regroup imports by module
+imports_granularity = "Module"
+# keep imports on the same line
+imports_layout = "Horizontal"
+# force closures and matches to be wrapped in a block
+force_multiline_blocks = true
+# format code in doc comments
+format_code_in_doc_comments = true
+# max width is 80ch
+max_width = 80
+# make sure all comments use //
+normalize_comments = true
+# make sure type and const are put first in impl
+reorder_impl_items = true
+# wrap several language constructs to 80ch
+use_small_heuristics = "Default"
+# use 2 spaces for tabs
+tab_spaces = 2
+# wrap comments
+wrap_comments = true

@@ -1,0 +1,21 @@
+name: deploy
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  deploy:
+    name: deploy
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref_name, 'refs/tags/v')
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup flyctl
+        uses: superfly/flyctl-actions/setup-flyctl@master
+      - name: Deploy to fly.io
+        run: flyctl deploy --remote-only
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
